@@ -14,11 +14,24 @@
 # Imports
 
 # Body
-
+def has_no_e():
+    """Return True if a given word doesn't have the letter 'e' in it
+    
+    Parameter:
+    word -- the given word to check"""
+    
+    with open("words.txt", 'r') as fin:
+        for word in fin:
+            has_e = False
+            for letter in word:
+                if letter == "e":
+                    has_e = True
+            if not has_e:
+                print("This word does not have an 'e': {}".format(word))
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    has_no_e()  # Call your function(s) here.
 
 if __name__ == '__main__':
     main()
