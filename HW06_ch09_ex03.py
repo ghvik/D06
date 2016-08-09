@@ -63,6 +63,7 @@ def forbidden_param(forbidden_letters):
 def find_five():
     letter_and_count = []
     
+    print("Calculating the number of words that each letter excludes...")
     for letter in "abcdefghijklmnopqrstuvwxyz":
         count = 0
         with open('words.txt', 'r') as fin:
@@ -71,8 +72,17 @@ def find_five():
                     count += 1
         letter_and_count.append((letter, count))
     
-    return sorted(letter_and_count, key=lambda t: t[1])[:5]
-
+    
+    print("These are the 5 letters that together would exclude the smallest number of words:")
+    five_forbidden = ""
+    words_excluded = 0
+    five_letter_and_count = sorted(letter_and_count, key=lambda t: t[1])[:5]
+    
+    print("Here is the sorted list:\n {}".format(five_letter_and_count))
+    for letter, count in five_letter_and_count:
+        five_forbidden += letter
+        words_excluded += count
+    print("The five letters are '{}' and the number of words excluded is {}.".format(five_forbidden, words_excluded))
 
 ##############################################################################
 def main():
@@ -84,7 +94,7 @@ def main():
     # print(forbidden_param("bcadefg"))
     # print(forbidden_param("Zeus"))
     # print(forbidden_param("abcdefghijklmnopqrstuvqxyz"))
-    print(find_five())
+    find_five()
 
 if __name__ == '__main__':
     main()
