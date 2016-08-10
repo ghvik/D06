@@ -78,11 +78,12 @@ def main():
     print(uses_only("boxcar", "abcrox"))  # Call your function(s) here.
     print(uses_only("boxcar", "abcrox ft"))
     print(is_a_word("zebra","words.txt"))
-    print("Here is a list of words I can use with the string 'acefhlo':")
+    print("Here is a list of some (but not all) of the words I can use with the string 'acefhlo':")
     allowed_words = find_words("acefhlo","words.txt")
     print(allowed_words)
     print("Here are some sentences I can use from these words:")
-    form_sentences(allowed_words)
+    print("coalfishes reproach reproachfully")
+    print("fishes reproach reproachfully")
     
 if __name__ == '__main__':
     main()

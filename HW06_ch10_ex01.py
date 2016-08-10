@@ -5,3 +5,17 @@
 # In your final submission: 
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
+
+def nested_sum(summand1, summand2):
+    summands_and_sum = []
+    summands_and_sum.extend([summand1, summand2])
+    summands_and_sum.append([sum([summand1, summand2])])
+    return summands_and_sum[2][0]
+
+def main():
+    print(nested_sum(1, 4))
+    print(nested_sum(321, -325))
+    print(nested_sum(-43, 43))
+    
+if __name__ == "__main__":
+    main()
